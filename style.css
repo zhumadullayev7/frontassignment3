@@ -1,0 +1,453 @@
+/* ОБЩИЕ СТИЛИ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- FLEXBOX: Task 1 (Navigation Bar) --- */
+
+.header-section {
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* FLEXBOX: Выравнивание шапки (Task 1) */
+    display: flex;
+    justify-content: space-between; /* Лого, меню, язык по краям */
+    align-items: center; /* Центрирование по вертикали */
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.main-nav {
+    /* FLEXBOX: Промежутки между ссылками (Task 1) */
+    display: flex;
+    gap: 30px; 
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 10px 0;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+}
+
+.language-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.language-selector a {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.language-selector a:hover {
+    color: #000;
+}
+
+.lang-active {
+    font-weight: bold;
+}
+
+/* СТИЛИ ГЛАВНОЙ СТРАНИЦЫ (INDEX) */
+
+/* --- CSS GRID: Task 3 (Главный макет index.html) --- */
+.main-content-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid; 
+    /* 300px для сайдбара, остальное (1fr) для новостей */
+    grid-template-columns: 300px 1fr; 
+    gap: 40px; 
+    padding: 0 20px;
+}
+
+.main-column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-news-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tournament-table {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tournament-table h2 {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.tournament-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tournament-table th,
+.tournament-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tournament-table th {
+    font-weight: bold;
+}
+
+.team-name {
+    /* FLEXBOX: Выравниваем логотип и название команды */
+    display: flex;
+    align-items: center;
+}
+
+.team-logo {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.best-players-block {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.best-players-block h2 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 0;
+}
+
+.best-players-block ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.best-players-block li {
+    /* FLEXBOX: Выравниваем элементы списка бомбардиров */
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.player-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.player-team-logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.main-news {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-news img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.news-text-content {
+    padding: 20px;
+}
+
+.news-text-content h1 {
+    font-size: 2rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.other-news {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* FLEXBOX: Task 2 (Выстраиваем новости в ряд, как карточки) */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.news-item {
+    /* Каждый блок новости занимает равное место */
+    flex: 1; 
+    
+    /* Внутренняя структура: изображение сверху, текст снизу */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.news-item img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "О ЛИГЕ" */
+
+.main-content-about-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.about-info-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.about-info-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- CSS GRID: Task 3 (Двухколоночный макет) --- */
+.about-content-wrapper {
+    display: grid;
+    /* Две колонки равной ширины */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text-column {
+    /* flex: 1; - удалено */
+}
+
+.about-text-column p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.league-stats {
+    display: flex;
+    justify-content: space-between; 
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    line-height: 1;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.about-map-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kazakhstan-map {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+.section-title-qj {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.single-image-section {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.single-image-block {
+    position: relative;
+    text-align: center;
+}
+
+.main-about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.management-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.management-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* FLEXBOX: Task 2 (Карточки Руководства) */
+.management-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    /* КЛЮЧ: Обеспечивает равную высоту всем карточкам */
+    align-items: stretch; 
+}
+
+.manager-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manager-card:hover {
+    /* Hover эффект */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.manager-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manager-role {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.manager-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+}
+
+.manager-email {
+    font-size: 1.1rem;
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Прижимает почту к низу */
+    margin-top: auto; 
+}
+
+.manager-email:hover {
+    color: #003d80;
+}
+
+
+/* СТИЛИ ПОДВАЛА (FOOTER) */
+.footer-section {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+    min-height: 50px;
+}
